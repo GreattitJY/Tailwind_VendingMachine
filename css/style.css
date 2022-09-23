@@ -1,0 +1,62 @@
+/* 초기화 부분 */
+body,
+h1,
+h2,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* 텍스트 숨김 */
+
+.text-hide {
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+/* 디자인 부분 */
+body {
+    background: #EAE8FE;
+}
+
+h1 {
+    height: inherit;
+}
+
+.header-title {
+    background-color: green;
+    height: 180px;
+    text-align: center;
+    margin-bottom: 67px;
+}
+
+.section-container {
+    background-color: gold;
+    /* height: 545px; */
+    margin-bottom: 171px;
+    display: flex;
+    justify-content: center;
+}
+
+.item-sell {
+    /* display: flex; */
+    /* flex-direction: column; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        ''
+        width: 360px;
+    height: 545px;
+    background-color: white;
+}
