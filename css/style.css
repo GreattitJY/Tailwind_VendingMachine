@@ -30,10 +30,7 @@ body {
     background: #EAE8FE;
 }
 
-h1 {
-    height: inherit;
-}
-
+/* 타이틀 로고 부분 */
 .header-title {
     background-color: green;
     height: 180px;
@@ -41,22 +38,31 @@ h1 {
     margin-bottom: 67px;
 }
 
+
+/* 자판기 부분 */
 .section-container {
     background-color: gold;
-    /* height: 545px; */
+    height: 545px;
     margin-bottom: 171px;
     display: flex;
     justify-content: center;
 }
 
 .item-sell {
-    /* display: flex; */
-    /* flex-direction: column; */
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        ''
-        width: 360px;
+    /* display: grid; */
+    width: 360px;
     height: 545px;
     background-color: white;
+}
+
+.item-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 31px 27px 8px;
+}
+
+.item-button {
+    width: 94px;
+    height: 130px;
+    margin: 0 12px 12px 0;
 }
