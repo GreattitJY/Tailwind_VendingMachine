@@ -3,7 +3,10 @@ body,
 h1,
 h2,
 ul,
-li {
+li,
+p,
+input,
+button {
     margin: 0;
     padding: 0;
     border: 0;
@@ -11,6 +14,14 @@ li {
 
 li {
     list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    font-size: 14px;
 }
 
 /* 텍스트 숨김 */
@@ -25,12 +36,12 @@ li {
     margin: -1px;
 }
 
-/* 디자인 부분 */
+/* 전체 배경 부분 */
 body {
     background: #EAE8FE;
 }
 
-/* 타이틀 로고 부분 */
+/* 헤더 로고 부분 */
 .header-title {
     background-color: green;
     height: 180px;
@@ -38,31 +49,148 @@ body {
     margin-bottom: 67px;
 }
 
+/* 메인 컨테이너 - 플렉스 정렬 */
 
-/* 자판기 부분 */
 .section-container {
     background-color: gold;
-    height: 545px;
-    margin-bottom: 171px;
     display: flex;
     justify-content: center;
 }
 
-.item-sell {
-    /* display: grid; */
+/* 메인 컨테이너의 자판기 크기 설정 */
+
+.item-sell,
+.item-get {
     width: 360px;
     height: 545px;
     background-color: white;
+    margin-right: 18px;
 }
 
+/* 첫 번째 컨테이너 시작 */
+
+/* 자판기 음료 목록 - 그리드 정렬 */
 .item-info {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 31px 27px 8px;
+    margin: 31px 15px 8px 27px;
 }
 
 .item-button {
     width: 94px;
     height: 130px;
     margin: 0 12px 12px 0;
+}
+
+/* 자판기 음료 구매 - 그리드 정렬 */
+.item-purchase {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 0 27px 28px;
+}
+
+/* 입금액 입력 및 잔액 */
+.text-balance,
+.input-money {
+    width: 200px;
+    height: 33px;
+    background-color: greenyellow;
+    margin: 0 12px 11px 0;
+}
+
+/* 입금 및 반환 버튼 */
+.button-return,
+.button-deposit {
+    width: 94px;
+    height: 33px;
+}
+
+/* 구매 리스트 */
+.purchase-list_machine {
+    width: 200px;
+    height: 106px;
+    margin-right: 12px;
+    background-color: greenyellow;
+    overflow: hidden scroll;
+}
+
+.purchase-list_machine ul {
+    margin: 12px;
+}
+
+.purchase-count_machine {
+    width: 170px;
+    height: 46px;
+    background-color: #fff;
+    margin-bottom: 6px;
+}
+
+/* 음료 획득 및 확인 링크 */
+.anchor-get {
+    width: 94px;
+    height: 106px;
+    background-color: greenyellow;
+}
+
+/* 첫 번째 컨테이너 끝 */
+
+/* 두 번째 컨테이너 시작 */
+/* 전체 플렉스 설정 */
+.item-get {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #EAE8FE;
+}
+
+/* 소지금 부분 */
+.item-get_money {
+    height: 50px;
+    background-color: #fff;
+}
+
+.text-myMoney {
+    width: 306px;
+    height: 32px;
+    background-color: yellowgreen;
+    margin: 9px 27px;
+}
+
+/* 획득한 음료 부분 */
+.item-get_check {
+    background-color: #fff;
+}
+
+.text-getList {
+    width: 68px;
+    height: 20px;
+    margin: 30px auto 13px;
+}
+
+.purchase-list_my {
+    width: 306px;
+    height: 364px;
+    background-color: greenyellow;
+    overflow: hidden scroll;
+    margin: 0 27px;
+}
+
+.purchase-list_my ul {
+    margin: 12px;
+}
+
+.purchase-count_my {
+    width: 276px;
+    height: 46px;
+    background-color: #fff;
+    margin-bottom: 6px;
+}
+
+/* 총금액 */
+.text-totalMoney {
+    width: 109px;
+    height: 20px;
+    margin: 6px 28px 10px 224px;
+    text-align: end;
+    font-size: 12px;
 }

@@ -20,26 +20,35 @@
         </header>
         <main>
             <section class="section-container">
-                <h2 class="text-hide">자판기</h2>
+                <h2 class="text-hide">음료 자판기</h2>
                 <div class="item-sell">
-                    <form class="item-list" action="">
-                        <ul>
-                            <li class="item-info">
+                    <form action="">
+                        <ul class="item-info">
+                            <li>
                                 <button class="item-button" type="button">
-                                    1
                                 </button>
+                            </li>
+                            <li>
                                 <button class="item-button" type="button">
                                     2
                                 </button>
+                            </li>
+                            <li>
                                 <button class="item-button" type="button">
                                     3
                                 </button>
+                            </li>
+                            <li>
                                 <button class="item-button" type="button">
                                     4
                                 </button>
+                            </li>
+                            <li>
                                 <button class="item-button" type="button">
                                     5
                                 </button>
+                            </li>
+                            <li>
                                 <button class="item-button" type="button">
                                     6
                                 </button>
@@ -47,23 +56,47 @@
                         </ul>
                     </form>
                     <form class="item-purchase" action="">
-                        <p>잔액 : 1,000원</p>
-                        <button class="test2" type="button">
+                        <p class="text-balance">잔액 : 1,000원</p>
+                        <button class="button-return" type="button">
                             거스름돈 반환
                         </button>
-                        <input type="text" placeholder=" 입금액 입력" />
-                        <button type="button">입금</button>
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                        </ul>
-                        <a class="" href="#">획득</a>
+                        <input
+                            class="input-money"
+                            type="text"
+                            placeholder=" 입금액 입력"
+                        />
+                        <button class="button-deposit" type="button">
+                            입금
+                        </button>
+                        <div class="purchase-list_machine">
+                            <ul>
+                                <li class="purchase-count_machine">1</li>
+                                <li class="purchase-count_machine">2</li>
+                                <li class="purchase-count_machine">3</li>
+                                <li class="purchase-count_machine">4</li>
+                            </ul>
+                        </div>
+                        <a class="anchor-get" href="#">획득</a>
                     </form>
                 </div>
-                <div class="item-get">asdasd</div>
+                <section class="item-get">
+                    <h2 class="text-hide">획득한 음료 및 소지금 확인</h2>
+                    <div class="item-get_money">
+                        <p class="text-myMoney">소지금: 25,000원</p>
+                    </div>
+                    <div class="item-get_check">
+                        <p class="text-getList">획득한 음료</p>
+                        <div class="purchase-list_my">
+                            <ul>
+                                <li class="purchase-count_my">1</li>
+                                <li class="purchase-count_my">2</li>
+                                <li class="purchase-count_my">3</li>
+                                <li class="purchase-count_my">4</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-totalMoney">총금액:9,000원</p>
+                </section>
             </section>
         </main>
     </body>
