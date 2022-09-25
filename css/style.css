@@ -88,6 +88,8 @@ body {
 }
 
 .box-item_page2 {
+    width: 360px;
+    height: 545px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -366,3 +368,58 @@ body {
     font-size: 12px;
 }
 
+@media screen and (max-width:780px) {
+
+    body {
+        background: #fff;
+    }
+
+    .header-title {
+        height: 88px;
+        margin: 0 auto 8px;
+    }
+
+    .header-title img {
+        width: 188px;
+        height: 88px;
+    }
+
+    .section-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .box-item_page1,
+    .box-item_page2 {
+        margin: 0;
+        height: auto;
+    }
+
+    .list-goods {
+        margin-top: 0;
+    }
+
+    .list-input {
+        margin-bottom: 20px;
+    }
+
+    .box-wallet {
+        height: 32px;
+        margin-bottom: 0
+    }
+
+    .text-wallet {
+        margin-top: 0;
+    }
+
+    .text-getList {
+        margin-top: 41px
+    }
+
+    .box-goods {
+        flex-grow: 1;
+    }
+
+}
