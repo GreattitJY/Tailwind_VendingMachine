@@ -83,8 +83,6 @@ body {
     height: 545px;
     background-color: white;
     margin-right: 18px;
-    position: relative;
-    inset: inherit;
 }
 
 .box-item_page2 {
