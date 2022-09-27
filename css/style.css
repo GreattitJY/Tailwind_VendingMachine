@@ -159,7 +159,7 @@ body {
 
 /* 품절 가상요소 */
 .soldOut::before {
-    content: '';
+    content: '품절';
     position: absolute;
     left: inherit;
     width: 94px;
