@@ -4,248 +4,464 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>vending Machine</title>
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/style.css" />
+        <title>Vending Machine</title>
+        <link rel="stylesheet" href="output.css" />
     </head>
-    <body>
-        <!-- 자판기 로고 부분 -->
-        <header class="header-title">
+    <body class="font-Sans font-medium bg-[#EAE8FE] box-border md:bg-white">
+        <!-- header 자판기 로고 -->
+        <header class="mb-[67px] md:mb-[0px]">
             <h1>
                 <img
-                    class="header-logo"
+                    class="mx-auto w-[386px] h-[180px] md:w-[188px] md:h-[88px]"
                     src="./img/logo.svg"
-                    alt="코카콜라 로고"
+                    alt="코카콜라 자판기 로고"
                 />
             </h1>
         </header>
-        <main>
-            <!-- 자판기 전체를 컨테이너로 인식하여 CSS에서 플레스로 정렬하기 위함-->
-            <section class="section-container">
-                <h2 class="text-hide">음료 자판기</h2>
-                <!-- 자판기 첫 페이지 부분 : 상품 목록과 구매가 이러우지는 부분 -->
-                <div class="box-item_page1">
-                    <form action="">
-                        <!-- 상품 목록 : 리스트를 버튼으로 활용 -->
-                        <ul class="list-goods">
-                            <li>
-                                <button type="button">
+        <!-- header 자판기 로고 끝 -->
+        <!-- main 자판기 -->
+        <main class="mb-[171px] md:mb-[43px] mt-[0px]">
+            <!-- 자판기 wrapper -->
+            <section
+                class="flex md:flex-col md:items-center justify-center gap-[28px] md:gap-[0px]"
+            >
+                <h2 class="hidden">자판기</h2>
+                <!-- 좌측 자판기-->
+                <section class="w-[360px] bg-[#fff]">
+                    <h3 class="hidden">좌측 자판기 : 움료 판매 및 구매</h3>
+                    <!-- 판매 메뉴-->
+                    <section>
+                        <h4 class="hidden">판매 메뉴</h4>
+                        <ul
+                            class="grid grid-cols-3 gap-[12px] mx-[27px] mt-[31px] md:mt-[18px] mb-[20px]"
+                        >
+                            <!-- 첫 번째 음료 -->
+                            <li
+                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
+                            >
+                                <!-- 품절 표시 -->
+                                <div
+                                    class="hidden absolute bg-black/80 rounded-[10px] w-[100%] h-[100%]"
+                                >
+                                    <img
+                                        class="block absolute top-11 left-4"
+                                        src="./img/Sold-out.svg"
+                                        alt="품절"
+                                    />
+                                </div>
+                                <!-- 품절 표시 끝 -->
+                                <button
+                                    class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
+                                >
                                     <img src="./img/Original_Cola.svg" alt="" />
-                                    <span>Original_Cola</span>
-                                    <strong>1000원</strong>
+                                    <!-- 크롬에서 개발자 도구를 열어보면 마우스 정보는 10px, 스타일 정보는 9px , 사파리는 둘 다 9px -->
+                                    <strong
+                                        class="text-[9px] font-normal text-[#333333]"
+                                        >Original_Cola</strong
+                                    >
+                                    <span
+                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
+                                        >1000원</span
+                                    >
                                 </button>
                             </li>
-                            <li>
-                                <button class="soldOut" type="button">
+                            <!-- 첫 번째 음료 끝 -->
+                            <!-- 두 번째 음료  + 품절 -->
+                            <!-- 품절을 div > img의 absolute로 표현하는 게 맞는지 궁금..  -->
+                            <!-- 웹 접근성을 위해 img의 alt에 품절을 주는 게 적절한지 궁금...다른 방법은 없는가?-->
+                            <li
+                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
+                            >
+                                <!-- 품절 표시 -->
+                                <div
+                                    class="absolute bg-black/80 rounded-[10px] w-[100%] h-[100%]"
+                                >
+                                    <img
+                                        class="block absolute top-11 left-4"
+                                        src="./img/Sold-out.svg"
+                                        alt="품절"
+                                    />
+                                </div>
+                                <!-- 품절 표시 끝 -->
+                                <button
+                                    disabled
+                                    class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
+                                >
                                     <img src="./img/Violet_Cola.svg" alt="" />
-                                    <span>Violet_Cola</span>
-                                    <strong>1000원</strong>
+                                    <strong
+                                        class="text-[9px] font-normal text-[#333333]"
+                                        >Violet_Cola</strong
+                                    >
+                                    <span
+                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
+                                        >1000원</span
+                                    >
                                 </button>
                             </li>
-                            <li>
-                                <button type="button">
+                            <!-- 두 번째 음료 끝 -->
+                            <!-- 세 번째 음료 -->
+                            <li
+                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
+                            >
+                                <!-- 품절 표시 -->
+                                <div
+                                    class="hidden absolute bg-black/80 rounded-[10px] w-[100%] h-[100%]"
+                                >
+                                    <img
+                                        class="block absolute top-11 left-4"
+                                        src="./img/Sold-out.svg"
+                                        alt="품절"
+                                    />
+                                </div>
+                                <!-- 품절 표시 끝 -->
+                                <button
+                                    class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
+                                >
                                     <img src="./img/Yellow_Cola.svg" alt="" />
-                                    <span>Yellow_Cola</span>
-                                    <strong>1000원</strong>
+                                    <strong
+                                        class="text-[9px] font-normal text-[#333333]"
+                                        >Yellow_Cola</strong
+                                    >
+                                    <span
+                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
+                                        >1000원</span
+                                    >
                                 </button>
                             </li>
-                            <li>
-                                <button type="button">
+                            <!-- 세 번째 음로 끝 -->
+                            <!-- 네 번째 음료 -->
+                            <li
+                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
+                            >
+                                <!-- 품절 표시 -->
+                                <div
+                                    class="absolute bg-black/80 rounded-[10px] w-[100%] h-[100%]"
+                                >
+                                    <img
+                                        class="block absolute top-11 left-4"
+                                        src="./img/Sold-out.svg"
+                                        alt="품절"
+                                    />
+                                </div>
+                                <!-- 품절 표시 끝 -->
+                                <button
+                                    disabled
+                                    class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
+                                >
                                     <img src="./img/Cool_Cola.svg" alt="" />
-                                    <span>Cool_Cola</span>
-                                    <strong>1000원</strong>
+                                    <strong
+                                        class="text-[9px] font-normal text-[#333333]"
+                                        >Cool_Cola</strong
+                                    >
+                                    <span
+                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
+                                        >1000원</span
+                                    >
                                 </button>
                             </li>
-                            <li>
-                                <button type="button">
+                            <!-- 네 번째 음료 끝 -->
+                            <!-- 다섯 번째 음료 -->
+                            <li
+                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
+                            >
+                                <!-- 품절 표시 -->
+                                <div
+                                    class="hidden absolute bg-black/80 rounded-[10px] w-[100%] h-[100%]"
+                                >
+                                    <img
+                                        class="block absolute top-11 left-4"
+                                        src="./img/Sold-out.svg"
+                                        alt="품절"
+                                    />
+                                </div>
+                                <!-- 품절 표시 끝 -->
+                                <button
+                                    class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
+                                >
                                     <img src="./img/Green_Cola.svg" alt="" />
-                                    <span>Green_Cola</span>
-                                    <strong>1000원</strong>
+                                    <strong
+                                        class="text-[9px] font-normal text-[#333333]"
+                                        >Green_Cola</strong
+                                    >
+                                    <span
+                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
+                                        >1000원</span
+                                    >
                                 </button>
                             </li>
-                            <li>
-                                <button type="button">
+                            <!-- 다서 번째 음료 끝 -->
+                            <!-- 여섯 번째 음료 -->
+                            <li
+                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
+                            >
+                                <!-- 품절 표시 -->
+                                <div
+                                    class="hidden absolute bg-black/80 rounded-[10px] w-[100%] h-[100%]"
+                                >
+                                    <img
+                                        class="block absolute top-11 left-4"
+                                        src="./img/Sold-out.svg"
+                                        alt="품절"
+                                    />
+                                </div>
+                                <!-- 품절 표시 끝 -->
+                                <button
+                                    class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
+                                >
                                     <img src="./img/Orange_Cola.svg" alt="" />
-                                    <span>Orange_Cola</span>
-                                    <strong>1000원</strong>
+                                    <strong
+                                        class="text-[9px] font-normal text-[#333333]"
+                                        >Orange_Cola</strong
+                                    >
+                                    <span
+                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
+                                        >1000원</span
+                                    >
                                 </button>
                             </li>
                         </ul>
-                    </form>
-                    <form class="list-input" action="">
-                        <div class="text-balance">
-                            <p>잔액:</p>
+                        <!-- 여섯 번째 음료 종료 -->
+                    </section>
+                    <!-- 판메 메뉴 끝 -->
+
+                    <!-- 구매 박스 -->
+                    <section
+                        class="grid grid-cols-[2fr,1fr] gap-[12px] mx-[27px] mb-[28px] md:mb-[11px]"
+                    >
+                        <h4 class="hidden">구매하는 곳</h4>
+                        <!--  잔액 및 거스름돈 반환 -->
+                        <!-- 잔액 확인 -->
+                        <div
+                            class="flex justify-between w-[200px] px-[10px] py-[6px] text-[14px] rounded-[5px] bg-[#EAE8FE]"
+                        >
+                            <p>잔액</p>
                             <p>1,000 원</p>
                         </div>
-                        <button class="button-return" type="button">
+                        <!-- 잔액 확인 끝 -->
+                        <!-- 거스름 돈 반환 :: 추후 JavsScript로 컨트롤?  -->
+                        <button
+                            class="w-[94px] text-[13px] rounded-[5px] shadow-[0_0_4px_rgba(0,0,0,0.5)] hover:border-[1px] hover:border-[#6327FE] hover:rounded-[5px]"
+                            type="button"
+                        >
                             거스름돈 반환
                         </button>
-                        <input
-                            class="input-money"
-                            type="text"
-                            placeholder=" 입금액 입력"
-                        />
-                        <button class="button-deposit" type="button">
+                        <!-- 거스름돈 반환 끝 -->
+                        <!-- 잔액 및 거스름돈 반환 끝 -->
+
+                        <!-- 입금 -->
+                        <!-- 입금액 입력 -->
+                        <form action="#" id="input-money">
+                            <input
+                                class="flex justify-between w-[200px] px-[10px] py-[6px] text-[14px] border-[1px] border-[#BDBDBD] rounded-[5px] hover:border-[1px] hover:border-[#6327FE] hover:rounded-[5px]"
+                                type="text"
+                                placeholder="입금액 입력"
+                            />
+                        </form>
+                        <!-- 입금액 입력 끝 -->
+                        <!-- 입금 버튼 -->
+                        <button
+                            class="w-[94px] pt-[6px] pr-[9px] pb-[7px] pl-[10px] text-[13px] shadow-[0_0_4px_rgba(0,0,0,0.5)] rounded-[5px] hover:border-[1px] hover:border-[#6327FE] hover:rounded-[5px]"
+                            type="submit"
+                            form="input-money"
+                        >
                             입금
                         </button>
-                        <div class="list-shopping">
-                            <ul>
-                                <li>
-                                    <button type="button">
+                        <!-- 입금 버튼 끝 -->
+                        <!-- 입금 끝 -->
+
+                        <!-- 선택한 음료 리스트 -->
+                        <section
+                            class="w-[200px] h-[106px] scrollbar-thumb-rounded-full scrollbar-thin scrollbar-thumb-white scrollbar::-webkit-scrollbar"
+                        >
+                            <h4 class="hidden">선택한 음료 리스트</h4>
+                            <ul
+                                class="p-[12px] flex flex-col gap-[6px] bg-[#EAE8FE]"
+                            >
+                                <li
+                                    class="w-[170px] h-[46px] rounded-[5px] bg-[#fff]"
+                                >
+                                    <button
+                                        class="flex items-center w-[100%] h-[100%]"
+                                    >
                                         <img
+                                            class="w-[18px] h-[33px] ml-[10px]"
+                                            src="./img/Green_Cola.svg"
+                                            alt=""
+                                        />
+                                        <strong
+                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
+                                            >Green_Cola</strong
+                                        >
+                                        <span
+                                            class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
+                                            >1</span
+                                        >
+                                    </button>
+                                </li>
+                                <li
+                                    class="w-[170px] h-[46px] rounded-[5px] bg-[#fff]"
+                                >
+                                    <button
+                                        class="flex items-center w-[100%] h-[100%]"
+                                    >
+                                        <img
+                                            class="w-[18px] h-[33px] ml-[10px]"
                                             src="./img/Original_Cola.svg"
                                             alt=""
                                         />
-                                        <span>Original_Colabr</span>
-                                        <strong>12</strong>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button">
-                                        <img
-                                            src="./img/Violet_Cola.svg"
-                                            alt=""
-                                        />
-                                        <span>Violet_Cola</span>
-                                        <strong>1</strong>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button">
-                                        <img
-                                            src="./img/Yellow_Cola.svg"
-                                            alt=""
-                                        />
-                                        <span>Yellow_Cola</span>
-                                        <strong>32</strong>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button">
-                                        <img src="./img/Cool_Cola.svg" alt="" />
-                                        <span>Cool_Cola</span>
-                                        <strong>5</strong>
+                                        <strong
+                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
+                                            >Original_Cola</strong
+                                        >
+                                        <span
+                                            class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
+                                            >3</span
+                                        >
                                     </button>
                                 </li>
                             </ul>
-                        </div>
-                        <a class="anchor-get" href="#">획득</a>
-                    </form>
-                </div>
-                <div class="box-item_page2">
-                    <div class="box-wallet">
-                        <div class="text-wallet">
-                            <p>소지금:</p>
+                        </section>
+                        <!-- 선택한 음료 리스트 끝 -->
+                        <!-- 획득 버튼 : form으로 감싸줘야 하는 지 궁금...-->
+                        <button
+                            class="rounded-[5px] text-[13px] font-bold text-white bg-[#6327FE]"
+                            type="submit"
+                        >
+                            획득
+                        </button>
+                        <!-- 획득 버튼 끝 -->
+                    </section>
+                    <!-- 구매 박스 끝 -->
+                </section>
+                <!-- 좌측 자판기 끝 -->
+
+                <!-- 우측 자판기 시작 -->
+                <section class="flex flex-col w-[360px]">
+                    <h3 class="hidden">소지금 및 획득한 음료</h3>
+                    <!-- 소지금 -->
+                    <section
+                        class="mb-[20px] md:mb-[7px] px-[27px] py-[9px] bg-white"
+                    >
+                        <h4 class="hidden">소지금</h4>
+                        <div
+                            class="flex justify-between px-[10px] py-[6px] bg-[#EAE8FE] rounded-[5px] text-[14px]"
+                        >
+                            <p>소지금 :</p>
                             <p>25,000 원</p>
                         </div>
-                    </div>
-                    <div class="box-goods">
-                        <p class="text-getList">획득한 음료</p>
-                        <div class="list-purchase">
-                            <ul>
-                                <li>
-                                    <button type="button">
+                    </section>
+                    <!-- 소지금 끝 -->
+
+                    <!-- 획득한 음료 흰 박스 -->
+                    <section class="flex flex-col grow items-center bg-white">
+                        <h4 class="mt-[25px] mb-[13px] text-[14px] font-bold">
+                            획득한 음료
+                        </h4>
+                        <!-- 구매 목록 -->
+                        <section
+                            class="w-[306px] h-[364px] scrollbar-thumb-rounded-full scrollbar-thin scrollbar-thumb-white scrollbar::-webkit-scrollbar rounded-[5px] bg-[#EAE8FE]"
+                        >
+                            <!-- 스크롤바가 overflow 이전엔 생기지 않음 -->
+                            <ul
+                                class="p-[12px] flex flex-col gap-[6px] bg-[#EAE8FE]"
+                            >
+                                <li
+                                    class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
+                                >
+                                    <button
+                                        class="flex items-center w-[100%] h-[100%]"
+                                    >
                                         <img
+                                            class="w-[18px] h-[33px] ml-[10px]"
+                                            src="./img/Green_Cola.svg"
+                                            alt=""
+                                        />
+                                        <strong
+                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
+                                            >Green_Cola</strong
+                                        >
+                                        <span
+                                            class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
+                                            >1</span
+                                        >
+                                    </button>
+                                </li>
+                                <li
+                                    class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
+                                >
+                                    <button
+                                        class="flex items-center w-[100%] h-[100%]"
+                                    >
+                                        <img
+                                            class="w-[18px] h-[33px] ml-[10px]"
                                             src="./img/Original_Cola.svg"
                                             alt=""
                                         />
-                                        <span>Original_Colabr</span>
-                                        <strong>12</strong>
+                                        <strong
+                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
+                                            >Original_Cola</strong
+                                        >
+                                        <span
+                                            class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
+                                            >12</span
+                                        >
                                     </button>
                                 </li>
-                                <li>
-                                    <button type="button">
+                                <li
+                                    class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
+                                >
+                                    <button
+                                        class="flex items-center w-[100%] h-[100%]"
+                                    >
                                         <img
-                                            src="./img/Violet_Cola.svg"
+                                            class="w-[18px] h-[33px] ml-[10px]"
+                                            src="./img/Orange_Cola.svg"
                                             alt=""
                                         />
-                                        <span>Violet_Cola</span>
-                                        <strong>1</strong>
+                                        <strong
+                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
+                                            >Orange_Cola</strong
+                                        >
+                                        <span
+                                            class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
+                                            >7</span
+                                        >
                                     </button>
                                 </li>
-                                <li>
-                                    <button type="button">
+                                <li
+                                    class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
+                                >
+                                    <button
+                                        class="flex items-center w-[100%] h-[100%]"
+                                    >
                                         <img
+                                            class="w-[18px] h-[33px] ml-[10px]"
                                             src="./img/Yellow_Cola.svg"
                                             alt=""
                                         />
-                                        <span>Yellow_Cola</span>
-                                        <strong>32</strong>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button">
-                                        <img
-                                            src="./img/Original_Cola.svg"
-                                            alt=""
-                                        />
-                                        <span>Original_Colabr</span>
-                                        <strong>12</strong>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button">
-                                        <img
-                                            src="./img/Violet_Cola.svg"
-                                            alt=""
-                                        />
-                                        <span>Violet_Cola</span>
-                                        <strong>1</strong>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button">
-                                        <img
-                                            src="./img/Yellow_Cola.svg"
-                                            alt=""
-                                        />
-                                        <span>Yellow_Cola</span>
-                                        <strong>32</strong>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button">
-                                        <img
-                                            src="./img/Original_Cola.svg"
-                                            alt=""
-                                        />
-                                        <span>Original_Colabr</span>
-                                        <strong>12</strong>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button">
-                                        <img
-                                            src="./img/Violet_Cola.svg"
-                                            alt=""
-                                        />
-                                        <span>Violet_Cola</span>
-                                        <strong>1</strong>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button">
-                                        <img
-                                            src="./img/Yellow_Cola.svg"
-                                            alt=""
-                                        />
-                                        <span>Yellow_Cola</span>
-                                        <strong>32</strong>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button">
-                                        <img src="./img/Cool_Cola.svg" alt="" />
-                                        <span>Cool_Cola</span>
-                                        <strong>5</strong>
+                                        <strong
+                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
+                                            >Yellow_Cola</strong
+                                        >
+                                        <span
+                                            class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
+                                            >3</span
+                                        >
                                     </button>
                                 </li>
                             </ul>
-                        </div>
-                        <p class="text-totalMoney">총금액:9,000 원</p>
-                    </div>
-                </div>
+                        </section>
+                        <!-- 구매 목록 끝 -->
+                        <p class="self-end mt-[6px] mr-[27px] text-[12px]">
+                            총금액 : 9,000원
+                        </p>
+                    </section>
+                    <!-- 획득한 음료 흰 박스 끝 -->
+                </section>
+                <!-- 우측 자판기 끝 -->
             </section>
+            <!-- 자판기 wrapper 끝 -->
         </main>
+        <!-- main 자판기 끝 -->
     </body>
 </html>
