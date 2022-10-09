@@ -50,7 +50,9 @@
                                     />
                                 </div>
                                 <!-- 품절 표시 끝 -->
+                                <!-- 음료 선택 데이터는 추후 JavaScript로 처리 -->
                                 <button
+                                    type="button"
                                     class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Original_Cola.svg" alt="" />
@@ -67,8 +69,8 @@
                             </li>
                             <!-- 첫 번째 음료 끝 -->
                             <!-- 두 번째 음료  + 품절 -->
-                            <!-- 품절을 div > img의 absolute로 표현하는 게 맞는지 궁금..  -->
-                            <!-- 웹 접근성을 위해 img의 alt에 품절을 주는 게 적절한지 궁금...다른 방법은 없는가?-->
+                            <!-- Question 1 ::품절을 div > img로 표현하는 게 맞는지 궁금합니다.  -->
+                            <!-- Question 1-1 ::웹 접근성을 위해 img의 alt에 품절을 주는 게 적절한지 궁금합니다. 혹시 다른 방법이 있는지도 궁급합니다.. -->
                             <li
                                 class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
                             >
@@ -85,6 +87,7 @@
                                 <!-- 품절 표시 끝 -->
                                 <button
                                     disabled
+                                    type="button"
                                     class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Violet_Cola.svg" alt="" />
@@ -115,6 +118,7 @@
                                 </div>
                                 <!-- 품절 표시 끝 -->
                                 <button
+                                    type="button"
                                     class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Yellow_Cola.svg" alt="" />
@@ -146,6 +150,7 @@
                                 <!-- 품절 표시 끝 -->
                                 <button
                                     disabled
+                                    type="button"
                                     class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Cool_Cola.svg" alt="" />
@@ -176,6 +181,7 @@
                                 </div>
                                 <!-- 품절 표시 끝 -->
                                 <button
+                                    type="button"
                                     class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Green_Cola.svg" alt="" />
@@ -206,6 +212,7 @@
                                 </div>
                                 <!-- 품절 표시 끝 -->
                                 <button
+                                    type="button"
                                     class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Orange_Cola.svg" alt="" />
@@ -238,10 +245,10 @@
                             <p>1,000 원</p>
                         </div>
                         <!-- 잔액 확인 끝 -->
-                        <!-- 거스름 돈 반환 :: 추후 JavsScript로 컨트롤?  -->
+                        <!-- 거스름 돈 반환 :: 추후 JavsScript로 컨트롤 -->
                         <button
-                            class="w-[94px] text-[13px] rounded-[5px] shadow-[0_0_4px_rgba(0,0,0,0.5)] hover:border-[1px] hover:border-[#6327FE] hover:rounded-[5px]"
                             type="button"
+                            class="w-[94px] text-[13px] rounded-[5px] shadow-[0_0_4px_rgba(0,0,0,0.5)] hover:border-[1px] hover:border-[#6327FE] hover:rounded-[5px]"
                         >
                             거스름돈 반환
                         </button>
@@ -281,6 +288,7 @@
                                     class="w-[170px] h-[46px] rounded-[5px] bg-[#fff]"
                                 >
                                     <button
+                                        type="button"
                                         class="flex items-center w-[100%] h-[100%]"
                                     >
                                         <img
@@ -302,6 +310,7 @@
                                     class="w-[170px] h-[46px] rounded-[5px] bg-[#fff]"
                                 >
                                     <button
+                                        type="button"
                                         class="flex items-center w-[100%] h-[100%]"
                                     >
                                         <img
@@ -322,7 +331,7 @@
                             </ul>
                         </section>
                         <!-- 선택한 음료 리스트 끝 -->
-                        <!-- 획득 버튼 : form으로 감싸줘야 하는 지 궁금...-->
+                        <!-- Question 2 :: 획득 버튼을 form으로 감싸줘야 하는지 궁금합니다.-->
                         <button
                             class="rounded-[5px] text-[13px] font-bold text-white bg-[#6327FE]"
                             type="submit"
@@ -361,7 +370,7 @@
                         <section
                             class="w-[306px] h-[364px] scrollbar-thumb-rounded-full scrollbar-thin scrollbar-thumb-white scrollbar::-webkit-scrollbar rounded-[5px] bg-[#EAE8FE]"
                         >
-                            <!-- 스크롤바가 overflow 이전엔 생기지 않음 -->
+                            <!-- Question 3 :: 스크롤바가 overflow 이전엔 생기지 않습니다 -->
                             <ul
                                 class="p-[12px] flex flex-col gap-[6px] bg-[#EAE8FE]"
                             >
@@ -369,6 +378,7 @@
                                     class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
                                 >
                                     <button
+                                        type="button"
                                         class="flex items-center w-[100%] h-[100%]"
                                     >
                                         <img
@@ -390,6 +400,7 @@
                                     class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
                                 >
                                     <button
+                                        type="button"
                                         class="flex items-center w-[100%] h-[100%]"
                                     >
                                         <img
@@ -411,6 +422,7 @@
                                     class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
                                 >
                                     <button
+                                        type="button"
                                         class="flex items-center w-[100%] h-[100%]"
                                     >
                                         <img
@@ -432,6 +444,7 @@
                                     class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
                                 >
                                     <button
+                                        type="button"
                                         class="flex items-center w-[100%] h-[100%]"
                                     >
                                         <img
