@@ -13,9 +13,6 @@ module.exports = {
       fontFamily: {
       Sans:  ["Noto Sans KR", "sans-serif"]
       },
-      dropShadow: {
-        'sm':'0 0 4px(0, 0, 0, 0.5)'
-      },
     },
   },
   plugins: [
