@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .disabled {
+        @apply rounded-[10px] bg-black/80 w-[100%] h-[100%] absolute bg-[url(./img/Sold-out.svg)] bg-no-repeat bg-center
+    }
+}
