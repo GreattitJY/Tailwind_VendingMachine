@@ -10,138 +10,82 @@
     <body class="font-Sans font-medium bg-[#EAE8FE] box-border md:bg-white">
         <header class="mb-[67px] md:mb-[0px]">
             <h1>
-                <img
-                    class="mx-auto w-[386px] h-[180px] md:w-[188px] md:h-[88px]"
-                    src="./img/logo.svg"
-                    alt="코카콜라 자판기 로고"
-                />
+                <img class="mx-auto w-[386px] h-[180px] md:w-[188px] md:h-[88px]" src="./img/logo.svg" alt="코카콜라 자판기 로고" />
             </h1>
         </header>
 
         <main class="mb-[171px] md:mb-[43px] mt-[0px]">
             <!-- 자판기 wrapper -->
-            <section
-                class="flex md:flex-col md:items-center justify-center gap-[28px] md:gap-[0px]"
-            >
-                <h2 class="hidden">자판기</h2>
+            <section class="flex md:flex-col md:items-center justify-center gap-[28px] md:gap-[0px]">
+                <h2 class="screen-out">자판기</h2>
                 <!-- 좌측 자판기-->
                 <section class="w-[360px] bg-[#fff]">
-                    <h3 class="hidden">좌측 자판기 : 움료 판매 및 구매</h3>
+                    <h3 class="screen-out">좌측 자판기 : 움료 판매 및 구매</h3>
                     <!-- 판매 메뉴-->
                     <section>
-                        <h4 class="hidden">판매 메뉴</h4>
-                        <ul
-                            class="grid grid-cols-3 gap-[12px] mx-[27px] mt-[31px] md:mt-[18px] mb-[20px]"
-                        >
-                            <li
-                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
-                            >
+                        <h4 class="screen-out">판매 메뉴</h4>
+                        <ul class="grid grid-cols-3 gap-[12px] mx-[27px] mt-[31px] md:mt-[18px] mb-[20px]">
+                            <li class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]">
                                 <!-- 음료 선택 데이터는 추후 JavaScript로 처리 -->
                                 <button
                                     type="button"
                                     class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Original_Cola.svg" alt="" />
-                                    <strong
-                                        class="text-[9px] font-normal text-[#333333]"
-                                        >Original_Cola</strong
-                                    >
-                                    <span
-                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
-                                        >1000원</span
-                                    >
+                                    <strong class="text-[9px] font-normal text-[#333333]">Original_Cola</strong>
+                                    <span class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white">1000원</span>
                                 </button>
                             </li>
-                            <li
-                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
-                            >
+                            <li class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]">
                                 <button
                                     disabled
                                     type="button"
                                     class="before:disabled flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Violet_Cola.svg" alt="" />
-                                    <strong
-                                        class="text-[9px] font-normal text-[#333333]"
-                                        >Violet_Cola</strong
-                                    >
-                                    <span
-                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
-                                        >1000원</span
-                                    >
+                                    <strong class="text-[9px] font-normal text-[#333333]">Violet_Cola</strong>
+                                    <span class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white">1000원</span>
                                 </button>
                             </li>
-                            <li
-                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
-                            >
+                            <li class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]">
                                 <button
                                     type="button"
                                     class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Yellow_Cola.svg" alt="" />
-                                    <strong
-                                        class="text-[9px] font-normal text-[#333333]"
-                                        >Yellow_Cola</strong
-                                    >
-                                    <span
-                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
-                                        >1000원</span
-                                    >
+                                    <strong class="text-[9px] font-normal text-[#333333]">Yellow_Cola</strong>
+                                    <span class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white">1000원</span>
                                 </button>
                             </li>
-                            <li
-                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
-                            >
+                            <li class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]">
                                 <button
                                     disabled
                                     type="button"
                                     class="before:disabled flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Cool_Cola.svg" alt="" />
-                                    <strong
-                                        class="text-[9px] font-normal text-[#333333]"
-                                        >Cool_Cola</strong
-                                    >
-                                    <span
-                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
-                                        >1000원</span
-                                    >
+                                    <strong class="text-[9px] font-normal text-[#333333]">Cool_Cola</strong>
+                                    <span class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white">1000원</span>
                                 </button>
                             </li>
-                            <li
-                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
-                            >
+                            <li class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]">
                                 <button
                                     type="button"
                                     class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Green_Cola.svg" alt="" />
-                                    <strong
-                                        class="text-[9px] font-normal text-[#333333]"
-                                        >Green_Cola</strong
-                                    >
-                                    <span
-                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
-                                        >1000원</span
-                                    >
+                                    <strong class="text-[9px] font-normal text-[#333333]">Green_Cola</strong>
+                                    <span class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white">1000원</span>
                                 </button>
                             </li>
-                            <li
-                                class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]"
-                            >
+                            <li class="relative w-[94px] h-[130px] rounded-[10px] shadow-[0_0_4px_rgba(0,0,0,0.5)]">
                                 <button
                                     type="button"
                                     class="flex flex-col gap-1.5 justify-center items-center w-[100%] h-[100%] hover:border-[3px] hover:border-[#6327FE] hover:rounded-[10px]"
                                 >
                                     <img src="./img/Orange_Cola.svg" alt="" />
-                                    <strong
-                                        class="text-[9px] font-normal text-[#333333]"
-                                        >Orange_Cola</strong
-                                    >
-                                    <span
-                                        class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white"
-                                        >1000원</span
-                                    >
+                                    <strong class="text-[9px] font-normal text-[#333333]">Orange_Cola</strong>
+                                    <span class="px-[16px] py-[2px] rounded-[50px] bg-[#6327FE] items-center text-[12px] text-white">1000원</span>
                                 </button>
                             </li>
                         </ul>
@@ -149,15 +93,11 @@
                     <!-- 판메 메뉴 끝 -->
 
                     <!-- 구매 박스 -->
-                    <section
-                        class="grid grid-cols-[2fr,1fr] gap-[12px] mx-[27px] mb-[28px] md:mb-[11px]"
-                    >
-                        <h4 class="hidden">구매하는 곳</h4>
-                        <div
-                            class="flex justify-between w-[200px] px-[10px] py-[6px] text-[14px] rounded-[5px] bg-[#EAE8FE]"
-                        >
+                    <section id="section-purchase" class="grid grid-cols-[2fr,1fr] gap-[12px] mx-[27px] mb-[28px] md:mb-[11px]">
+                        <h4 class="screen-out">구매하는 곳</h4>
+                        <div class="flex justify-between w-[200px] px-[10px] py-[6px] text-[14px] rounded-[5px] bg-[#EAE8FE]">
                             <p>잔액</p>
-                            <p>1,000 원</p>
+                            <p id="balance">1,000 원</p>
                         </div>
                         <!-- 거스름 돈 반환 :: 추후 JavsScript로 컨트롤 -->
                         <button
@@ -169,12 +109,13 @@
 
                         <form action="#" id="input-money">
                             <input
-                                class="flex justify-between w-[200px] px-[10px] py-[6px] text-[14px] border-[1px] border-[#BDBDBD] rounded-[5px] hover:border-[1px] hover:border-[#6327FE] hover:rounded-[5px] hover:shadow-[0_0_4px_rgba(99,39,254,0.5)]"
-                                type="text"
+                                class="flex justify-between w-[200px] px-[10px] py-[6px] text-[14px] border-[1px] border-[#BDBDBD] rounded-[5px] hover:border-[1px] hover:border-[#6327FE] hover:rounded-[5px] hover:shadow-[0_0_4px_rgba(99,39,254,0.5)] valid"
+                                type="number"
                                 placeholder="입금액 입력"
                             />
                         </form>
                         <button
+                            id="input-button"
                             class="w-[94px] pt-[6px] pr-[9px] pb-[7px] pl-[10px] text-[13px] shadow-[0_0_4px_rgba(0,0,0,0.5)] rounded-[5px] hover:border-[1px] hover:border-[#6327FE] hover:rounded-[5px] hover:shadow-[0_0_4px_rgba(99,39,254,0.5)]"
                             type="button"
                             form="input-money"
@@ -185,48 +126,28 @@
                         <section
                             class="w-[200px] h-[106px] scrollbar-thumb-rounded-full scrollbar-thin scrollbar-thumb-white scrollbar::-webkit-scrollbar"
                         >
-                            <h4 class="hidden">선택한 음료 리스트</h4>
-                            <ul
-                                class="p-[12px] flex flex-col gap-[6px] bg-[#EAE8FE] rounded-[5px]"
-                            >
-                                <li
-                                    class="w-[170px] h-[46px] rounded-[5px] bg-[#fff]"
-                                >
+                            <h4 class="screen-out">선택한 음료 리스트</h4>
+                            <ul class="p-[12px] flex flex-col gap-[6px] bg-[#EAE8FE] rounded-[5px]">
+                                <li class="w-[170px] h-[46px] rounded-[5px] bg-[#fff]">
                                     <button
                                         type="button"
                                         class="flex items-center w-[100%] h-[100%] hover:border-[1px] hover:border-[#6327FE] hover:rounded-[5px]"
                                     >
-                                        <img
-                                            class="w-[18px] h-[33px] ml-[10px]"
-                                            src="./img/Green_Cola.svg"
-                                            alt=""
-                                        />
-                                        <strong
-                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
-                                            >Green_Cola</strong
-                                        >
+                                        <img class="w-[18px] h-[33px] ml-[10px]" src="./img/Green_Cola.svg" alt="" />
+                                        <strong class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]">Green_Cola</strong>
                                         <span
                                             class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
                                             >1</span
                                         >
                                     </button>
                                 </li>
-                                <li
-                                    class="w-[170px] h-[46px] rounded-[5px] bg-[#fff]"
-                                >
+                                <li class="w-[170px] h-[46px] rounded-[5px] bg-[#fff]">
                                     <button
                                         type="button"
                                         class="flex items-center w-[100%] h-[100%] hover:border-[1px] hover:border-[#6327FE] hover:rounded-[5px]"
                                     >
-                                        <img
-                                            class="w-[18px] h-[33px] ml-[10px]"
-                                            src="./img/Original_Cola.svg"
-                                            alt=""
-                                        />
-                                        <strong
-                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
-                                            >Original_Cola</strong
-                                        >
+                                        <img class="w-[18px] h-[33px] ml-[10px]" src="./img/Original_Cola.svg" alt="" />
+                                        <strong class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]">Original_Cola</strong>
                                         <span
                                             class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
                                             >3</span
@@ -235,12 +156,7 @@
                                 </li>
                             </ul>
                         </section>
-                        <button
-                            class="rounded-[5px] text-[13px] font-bold text-white bg-[#6327FE]"
-                            type="button"
-                        >
-                            획득
-                        </button>
+                        <button class="rounded-[5px] text-[13px] font-bold text-white bg-[#6327FE]" type="button">획득</button>
                     </section>
                     <!-- 구매 박스 끝 -->
                 </section>
@@ -248,112 +164,56 @@
 
                 <!-- 우측 자판기 시작 -->
                 <section class="flex flex-col w-[360px]">
-                    <h3 class="hidden">소지금 및 획득한 음료</h3>
-                    <section
-                        class="mb-[20px] md:mb-[7px] px-[27px] py-[9px] bg-white"
-                    >
-                        <h4 class="hidden">소지금</h4>
-                        <div
-                            class="flex justify-between px-[10px] py-[6px] bg-[#EAE8FE] rounded-[5px] text-[14px]"
-                        >
+                    <h3 class="screen-out">소지금 및 획득한 음료</h3>
+                    <section class="mb-[20px] md:mb-[7px] px-[27px] py-[9px] bg-white">
+                        <h4 class="screen-out">소지금</h4>
+                        <div class="flex justify-between px-[10px] py-[6px] bg-[#EAE8FE] rounded-[5px] text-[14px]">
                             <p>소지금 :</p>
-                            <p>25,000 원</p>
+                            <p id="wallet">25,000 원</p>
                         </div>
                     </section>
 
                     <!-- 획득한 음료 white box -->
                     <section class="flex flex-col grow items-center bg-white">
-                        <h4 class="mt-[25px] mb-[13px] text-[14px] font-bold">
-                            획득한 음료
-                        </h4>
+                        <h4 class="mt-[25px] mb-[13px] text-[14px] font-bold">획득한 음료</h4>
                         <div
                             class="w-[306px] h-[364px] scrollbar-thumb-rounded-full scrollbar-thin scrollbar-thumb-white scrollbar-w-[4px] rounded-[5px] bg-[#EAE8FE]"
                         >
-                            <ul
-                                class="p-[12px] flex flex-col gap-[6px] bg-[#EAE8FE]"
-                            >
-                                <li
-                                    class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
-                                >
-                                    <button
-                                        type="button"
-                                        class="flex items-center w-[100%] h-[100%]"
-                                    >
-                                        <img
-                                            class="w-[18px] h-[33px] ml-[10px]"
-                                            src="./img/Green_Cola.svg"
-                                            alt=""
-                                        />
-                                        <strong
-                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
-                                            >Green_Cola</strong
-                                        >
+                            <ul class="p-[12px] flex flex-col gap-[6px] bg-[#EAE8FE]">
+                                <li class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]">
+                                    <button type="button" class="flex items-center w-[100%] h-[100%]">
+                                        <img class="w-[18px] h-[33px] ml-[10px]" src="./img/Green_Cola.svg" alt="" />
+                                        <strong class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]">Green_Cola</strong>
                                         <span
                                             class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
                                             >1</span
                                         >
                                     </button>
                                 </li>
-                                <li
-                                    class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
-                                >
-                                    <button
-                                        type="button"
-                                        class="flex items-center w-[100%] h-[100%]"
-                                    >
-                                        <img
-                                            class="w-[18px] h-[33px] ml-[10px]"
-                                            src="./img/Original_Cola.svg"
-                                            alt=""
-                                        />
-                                        <strong
-                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
-                                            >Original_Cola</strong
-                                        >
+                                <li class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]">
+                                    <button type="button" class="flex items-center w-[100%] h-[100%]">
+                                        <img class="w-[18px] h-[33px] ml-[10px]" src="./img/Original_Cola.svg" alt="" />
+                                        <strong class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]">Original_Cola</strong>
                                         <span
                                             class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
                                             >12</span
                                         >
                                     </button>
                                 </li>
-                                <li
-                                    class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
-                                >
-                                    <button
-                                        type="button"
-                                        class="flex items-center w-[100%] h-[100%]"
-                                    >
-                                        <img
-                                            class="w-[18px] h-[33px] ml-[10px]"
-                                            src="./img/Orange_Cola.svg"
-                                            alt=""
-                                        />
-                                        <strong
-                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
-                                            >Orange_Cola</strong
-                                        >
+                                <li class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]">
+                                    <button type="button" class="flex items-center w-[100%] h-[100%]">
+                                        <img class="w-[18px] h-[33px] ml-[10px]" src="./img/Orange_Cola.svg" alt="" />
+                                        <strong class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]">Orange_Cola</strong>
                                         <span
                                             class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
                                             >7</span
                                         >
                                     </button>
                                 </li>
-                                <li
-                                    class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]"
-                                >
-                                    <button
-                                        type="button"
-                                        class="flex items-center w-[100%] h-[100%]"
-                                    >
-                                        <img
-                                            class="w-[18px] h-[33px] ml-[10px]"
-                                            src="./img/Yellow_Cola.svg"
-                                            alt=""
-                                        />
-                                        <strong
-                                            class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]"
-                                            >Yellow_Cola</strong
-                                        >
+                                <li class="w-[276px] h-[46px] rounded-[5px] bg-[#fff]">
+                                    <button type="button" class="flex items-center w-[100%] h-[100%]">
+                                        <img class="w-[18px] h-[33px] ml-[10px]" src="./img/Yellow_Cola.svg" alt="" />
+                                        <strong class="ml-[10px] mr-auto text-[9px] font-normal text-[#333333]">Yellow_Cola</strong>
                                         <span
                                             class="mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]"
                                             >3</span
@@ -362,9 +222,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <p class="self-end mt-[6px] mr-[27px] text-[12px]">
-                            총금액 : 9,000원
-                        </p>
+                        <p class="self-end mt-[6px] mr-[27px] text-[12px]">총금액 : 9,000원</p>
                     </section>
                     <!-- 획득한 음료 white box 끝 -->
                 </section>
@@ -372,5 +230,6 @@
             </section>
             <!-- 자판기 wrapper 끝 -->
         </main>
+        <script src="./JS/app.js"></script>
     </body>
 </html>

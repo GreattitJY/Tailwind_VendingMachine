@@ -8,4 +8,8 @@
     .disabled {
         @apply rounded-[10px] bg-black/80 w-[100%] h-[100%] absolute bg-[url(./img/Sold-out.svg)] bg-no-repeat bg-center
     }
+
+    .screen-out {
+        @apply overflow-hidden absolute w-0 h-0 leading-[0] indent-[-9999px]
+    }
 }
