@@ -35,7 +35,7 @@ Array.prototype.forEach.call(goodsList, (item) => {
 
 // purchase\
 const toInteger = function (string) {
-    return string.match(/[0-9]/g).join("") | 0;
+    return parseInt(string.match(/[0-9]/g).join(""));
 };
 
 const comma = function (money) {
