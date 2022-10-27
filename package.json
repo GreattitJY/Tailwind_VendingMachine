@@ -1,21 +1,21 @@
 {
-  "name": "tailwind_resume",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "tailwind": "npx tailwindcss -i ./input.css -o ./output.css --watch"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "scrollbar-size": "^2.1.0",
-    "tailwind-scrollbar": "^2.0.1",
-    "tailwind-scrollbar-variants": "^1.1.1",
-    "tailwindcss": "^3.1.8"
-  },
-  "devDependencies": {
-    "@windicss/plugin-scrollbar": "^1.2.3",
-    "ps-scrollbar-tailwind": "^0.0.1"
-  }
+    "name": "tailwind_resume",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "scrollbar-size": "^2.1.0",
+        "tailwind-scrollbar": "^2.0.1",
+        "tailwind-scrollbar-variants": "^1.1.1",
+        "tailwindcss": "^3.1.8"
+    },
+    "devDependencies": {
+        "@windicss/plugin-scrollbar": "^1.2.3",
+        "ps-scrollbar-tailwind": "^0.0.1"
+    }
 }
