@@ -1,7 +1,8 @@
 // const { default: scrollbarSize } = require('scrollbar-size');
 
 module.exports = {
-    content: ["./index.html"],
+    content: ["./index.html", "./JS/app.js"],
+
     darkMode: false, // or 'media' or 'class'
     theme: {
         screens: {

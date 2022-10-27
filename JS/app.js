@@ -11,22 +11,26 @@ const basketList = basket.querySelector("#section-basket ul");
 
 // goods
 const addBasket = function () {
+    console.log(this);
     console.log(this === goodsList[0]);
     // if (this === goodsList[0] && basketList)
-    const aa = document.querySelector("#test");
-    if (document.querySelector("#test") === null) {
-        const productLi = document.createElement("li");
-        const productBtn = document.createElement("button");
-        const productImg = document.createElement("img");
-        const productName = document.createElement("strong");
-        const productPrice = document.createElement("span");
-        basketList.appendChild(productLi);
-        productLi.appendChild(productBtn);
-        productBtn.appendChild(productImg);
-        productBtn.appendChild(productName);
-        productBtn.appendChild(productPrice);
-        productLi.id = "test";
-    }
+    const productLi = document.createElement("li");
+    const productBtn = document.createElement("button");
+    const productImg = document.createElement("img");
+    const productName = document.createElement("strong");
+    const productPrice = document.createElement("span");
+    productLi.appendChild(productBtn);
+    productBtn.appendChild(productImg);
+    productBtn.appendChild(productName);
+    productBtn.appendChild(productPrice);
+    productLi.setAttribute("class", "productLi");
+    productBtn.setAttribute("class", "productBtn");
+    productBtn.setAttribute("type", "button");
+    productImg.setAttribute("class", "productImg");
+    productImg.setAttribute("src", "");
+    productName.setAttribute("class", "productImg");
+    productPrice.setAttribute("class", "productImg");
+    return productLi;
 };
 
 Array.prototype.forEach.call(goodsList, (item) => {

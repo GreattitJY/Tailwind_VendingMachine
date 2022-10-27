@@ -6,10 +6,30 @@
 
 @layer components {
     .disabled {
-        @apply rounded-[10px] bg-black/80 w-[100%] h-[100%] absolute bg-[url(./img/Sold-out.svg)] bg-no-repeat bg-center
+        @apply rounded-[10px] bg-black/80 w-[100%] h-[100%] absolute bg-[url(../img/Sold-out.svg)] bg-no-repeat bg-center
     }
 
     .screen-out {
         @apply overflow-hidden absolute w-0 h-0 leading-[0] indent-[-9999px]
+    }
+
+    .productLi {
+        @apply w-[170px] h-[46px] rounded-[5px] bg-[#fff]
+    }
+
+    .productBtn {
+        @apply flex items-center w-[100%] h-[100%] cursor-default
+    }
+
+    .productImg {
+        @apply w-[18px] h-[33px] ml-[10px]
+    }
+
+    .productName {
+        @apply ml-[10px] mr-auto text-[9px] font-normal text-[#333333]
+    }
+
+    .productPrice {
+        @apply mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]
     }
 }
