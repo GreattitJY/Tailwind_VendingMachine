@@ -9,21 +9,46 @@
     -   거스름돈이 나와야 합니다.
     -   버튼을 누르면 상품이 1개씩 추가됩니다.
 
-## 업데이트 사항
+## 업데이트 및 고민 사항
 
--   10월 26일
+-   10월 27일 (issue)
+
+    -   issue 1 클릭 이벤트 발생 시 `button`의 자식 요소인 상품 이미지와 이름을 어떻게 가져올 지에 대한 고민
+    -   issue 1-1 돔 트리를 이용해 가져올 경우 코드가 복잡해지는 문제가 발생 -> 클릭 이벤트 한 번으로 해결하기
+    -   해결 방법 : HTMLElement.dataset을 이용해서 정보를 읽어와 해결했습니다.
+        ```html
+        <button data-nmae="Original_Cola">
+            <img src="./img/Original_Cola.svg" alt="" />
+            <strong>Original_Cola</strong>
+            <span>1000원</span>
+        </button>
+        ```
+        ```js
+        productImg.setAttribute("src", `./img/${this.dataset.name}.svg`);
+        ```
+
+-   10월 26일 (issue)
+
+    -   issue 1 Tailwind를 npm run을 통해서 빌드할 경우 input.css의 `@layer components`가 빌드되지 않아 자바스크립트 컨트롤이 안 되는 문제가 발생.
+    -   해결 방법 : 단순히 html에 `<script>`를 작성한다고 끝나는 게 아니라 tailwind.config.js에 경로 추가 (Tailwind 공식 문서 참고)
+
+    ```js
+    module.exports = {
+        content: ["./index.html", "./JS/app.js"],
+    };
+    ```
 
     -   자바스크립트를 통한 명세서 구현 중입니다.
         -   입금 및 거스름돈 구현 완료
-        -   음료 클릭 시 장바구니 추가 구현 중입니다.
+        -   음료 클릭 시 구매 이벤트 구현 중입니다.
 
 -   10월 8일
 
-    -   ~~Tailwind로 다시 구현했습니다.~~
-    -   ~~CDN이 아닌 CLI를 이용했습니다.~~
-    -   ~~미디어 쿼리까지 구현되어 있습니다.~~
-    -   ~~현재 자바스크립트를 이용한 명세서는 미구현입니다.~~
+    -   CSS를 Tailwind로 다시 리팩토링했습니다.
+    -   npm을 통해 CLI로 작업했습니다.
+    -   미디어 쿼리까지 구현했습니다.
+    -   현재 자바스크립트를 이용한 명세서는 미구현입니다.
 
--   ~~9월 27일~~
-    -   ~~현재 미디어 쿼리까지 구현되어 있습니다.~~
-    -   ~~현 시점으로 요구사항 명세는 아직 미구현입니다.~~
+-   9월 27일
+    -   HTML과 CSS를 통한 미디어 쿼리까지 구현했습니다.
+    -   현 시점으로 요구사항 명세는 아직 미구현입니다.

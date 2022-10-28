@@ -562,7 +562,7 @@ video {
   color: rgb(51 51 51 / var(--tw-text-opacity));
 }
 
-.productPrice{
+.productCount{
   margin-right: 8px;
   display: flex;
   height: 30px;

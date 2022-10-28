@@ -1,5 +1,5 @@
-const goods = document.querySelector("#section-goods");
-const goodsList = goods.querySelectorAll("#section-goods button");
+const product = document.querySelector("#section-product");
+const productList = product.querySelectorAll("#section-product button");
 const purchase = document.querySelector("#section-purchase");
 const inpMoney = purchase.querySelector("#input-money input");
 const inpBtn = purchase.querySelector("#input-button");
@@ -9,35 +9,40 @@ const wallet = document.querySelector("#wallet");
 const basket = document.querySelector("#section-basket");
 const basketList = basket.querySelector("#section-basket ul");
 
-// goods
+// const click = 1;
+
+// product click event
 const addBasket = function () {
-    console.log(this);
-    console.log(this === goodsList[0]);
-    // if (this === goodsList[0] && basketList)
+    console.log(this.dataset.name, this.dataset.price);
+    console.log(this === productList[0]);
+    // if (this === productList[0] && basketList)
     const productLi = document.createElement("li");
     const productBtn = document.createElement("button");
     const productImg = document.createElement("img");
     const productName = document.createElement("strong");
-    const productPrice = document.createElement("span");
+    const productCount = document.createElement("span");
     productLi.appendChild(productBtn);
     productBtn.appendChild(productImg);
     productBtn.appendChild(productName);
-    productBtn.appendChild(productPrice);
+    productBtn.appendChild(productCount);
     productLi.setAttribute("class", "productLi");
     productBtn.setAttribute("class", "productBtn");
     productBtn.setAttribute("type", "button");
     productImg.setAttribute("class", "productImg");
-    productImg.setAttribute("src", "");
-    productName.setAttribute("class", "productImg");
-    productPrice.setAttribute("class", "productImg");
+    productImg.setAttribute("src", `./img/${this.dataset.name}.svg`);
+    productName.setAttribute("class", "productName");
+    productName.textContent = `${this.dataset.name}`;
+    productCount.setAttribute("class", "productCount");
+    productCount.textContent += 1;
+    basketList.appendChild(productLi);
     return productLi;
 };
 
-Array.prototype.forEach.call(goodsList, (item) => {
+Array.prototype.forEach.call(productList, (item) => {
     item.addEventListener("click", addBasket);
 });
 
-// purchase\
+// purchase
 const toInteger = function (string) {
     return parseInt(string.match(/[0-9]/g).join(""));
 };

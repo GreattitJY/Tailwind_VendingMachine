@@ -29,7 +29,7 @@
         @apply ml-[10px] mr-auto text-[9px] font-normal text-[#333333]
     }
 
-    .productPrice {
+    .productCount {
         @apply mr-[8px] flex justify-center items-center w-[30px] h-[30px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px]
     }
 }
