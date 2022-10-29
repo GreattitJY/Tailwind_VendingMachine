@@ -18,53 +18,53 @@ const productData = [
     {
         name: "Original_Cola",
         price: 1000,
-        count: 10,
+        stock: 5,
     },
     {
         name: "Violet_Cola",
         price: 1000,
-        count: 0,
+        stock: 0,
     },
     {
         name: "Yellow_Cola",
         price: 1000,
-        count: 10,
+        stock: 10,
     },
     {
         name: "Cool_Cola",
         price: 1000,
-        count: 3,
+        stock: 2,
     },
     {
         name: "Green_Cola",
         price: 1000,
-        count: 10,
+        stock: 10,
     },
     {
         name: "Orange_Cola",
         price: 1000,
-        count: 10,
+        stock: 10,
     },
 ];
 
-function renderProductData(productData) {
+const renderProductData = (function () {
     const temp = [];
-    for (const product of productData) {
-        test.push({
-            name: product.name,
-            price: product.price,
-            count: product.count,
+    for (const data of productData) {
+        temp.push({
+            ...data,
         });
     }
     return temp;
-}
+})();
 
 const addBasket = function () {
-    if (leftMoney < this.dataset.price) {
+    // console.log(this);
+    const renderProductData = checkStock(this);
+    if (leftMoney < renderProductData["price"]) {
         alert("잔액이 모자랍니다.");
         return;
     }
-    leftMoney -= this.dataset.price;
+    leftMoney -= renderProductData["price"];
     balance.textContent = comma(leftMoney) + " 원";
     if (basket.querySelector(`#${this.dataset.name}`) === null) {
         const productLi = document.createElement("li");
@@ -87,19 +87,31 @@ const addBasket = function () {
         productCount.setAttribute("class", "productCount");
         productCount.textContent = 1;
         basketList.appendChild(productLi);
+        renderProductData["stock"] -= 1;
     } else {
         const productCount = basketList.querySelector(`#${this.dataset.name} .productCount`);
         productCount.textContent = parseInt(productCount.textContent) + parseInt(1);
+        renderProductData["stock"] -= 1;
+    }
+    checkStock(this);
+};
+
+const checkStock = function (product) {
+    for (const data of renderProductData) {
+        if (product.dataset.name === data["name"]) {
+            if (data["stock"] === 0) {
+                product.classList.add("before:disabled");
+                product.disabled = true;
+            } else {
+                return data;
+            }
+        }
     }
 };
 
-Array.prototype.forEach.call(productList, (item) => {
-    // for (const product of productData) {
-    //     console.log(item);
-    //     console.log(product.name);
-    //     console.log(product.count);
-    // }
-    item.addEventListener("click", addBasket);
+Array.prototype.forEach.call(productList, (product) => {
+    checkStock(product);
+    product.addEventListener("click", addBasket);
 });
 
 // purchase
