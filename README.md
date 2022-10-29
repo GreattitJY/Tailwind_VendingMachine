@@ -9,7 +9,34 @@
     -   거스름돈이 나와야 합니다.
     -   버튼을 누르면 상품이 1개씩 추가됩니다.
 
-## 업데이트 및 고민 사항
+## 업데이트 및 고민사항
+
+-   10월 29일 (issue, html 의존성 낮추기)
+
+    -   issue 1 json 형식을 통해 데이터를 받아올 경우 재고 처리를 어떻게 할 것이지에 대한 문제
+    -   해결 방법 : render를 통한 객체를 생성 후 변수 할당하기로 해결했습니다.
+    -   html 의존성 낮추기 : json 데이터 형식을 활용할 경우 dataset을 사용하지 않아도 됨으로 html 의존성을 낮췄습니다.
+
+        ```js
+        const productData = [
+            {
+                name: "Original_Cola",
+                price: 1000,
+                stock: 5,
+            },
+            ...
+        ];
+
+        const renderProductData = (function () {
+            const temp = [];
+            for (const data of productData) {
+                temp.push({
+                    ...data,
+                });
+            }
+            return temp;
+        })();
+        ```
 
 -   10월 27일 (issue)
 
