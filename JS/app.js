@@ -9,36 +9,96 @@ const wallet = document.querySelector("#wallet");
 const basket = document.querySelector("#section-basket");
 const basketList = basket.querySelector("#section-basket ul");
 
+let leftMoney = 0;
 // const click = 1;
 
 // product click event
+
+const productData = [
+    {
+        name: "Original_Cola",
+        price: 1000,
+        count: 10,
+    },
+    {
+        name: "Violet_Cola",
+        price: 1000,
+        count: 0,
+    },
+    {
+        name: "Yellow_Cola",
+        price: 1000,
+        count: 10,
+    },
+    {
+        name: "Cool_Cola",
+        price: 1000,
+        count: 3,
+    },
+    {
+        name: "Green_Cola",
+        price: 1000,
+        count: 10,
+    },
+    {
+        name: "Orange_Cola",
+        price: 1000,
+        count: 10,
+    },
+];
+
+function renderProductData(productData) {
+    const temp = [];
+    for (const product of productData) {
+        test.push({
+            name: product.name,
+            price: product.price,
+            count: product.count,
+        });
+    }
+    return temp;
+}
+
 const addBasket = function () {
-    console.log(this.dataset.name, this.dataset.price);
-    console.log(this === productList[0]);
-    // if (this === productList[0] && basketList)
-    const productLi = document.createElement("li");
-    const productBtn = document.createElement("button");
-    const productImg = document.createElement("img");
-    const productName = document.createElement("strong");
-    const productCount = document.createElement("span");
-    productLi.appendChild(productBtn);
-    productBtn.appendChild(productImg);
-    productBtn.appendChild(productName);
-    productBtn.appendChild(productCount);
-    productLi.setAttribute("class", "productLi");
-    productBtn.setAttribute("class", "productBtn");
-    productBtn.setAttribute("type", "button");
-    productImg.setAttribute("class", "productImg");
-    productImg.setAttribute("src", `./img/${this.dataset.name}.svg`);
-    productName.setAttribute("class", "productName");
-    productName.textContent = `${this.dataset.name}`;
-    productCount.setAttribute("class", "productCount");
-    productCount.textContent += 1;
-    basketList.appendChild(productLi);
-    return productLi;
+    if (leftMoney < this.dataset.price) {
+        alert("잔액이 모자랍니다.");
+        return;
+    }
+    leftMoney -= this.dataset.price;
+    balance.textContent = comma(leftMoney) + " 원";
+    if (basket.querySelector(`#${this.dataset.name}`) === null) {
+        const productLi = document.createElement("li");
+        const productBtn = document.createElement("button");
+        const productImg = document.createElement("img");
+        const productName = document.createElement("strong");
+        const productCount = document.createElement("span");
+        productLi.appendChild(productBtn);
+        productBtn.appendChild(productImg);
+        productBtn.appendChild(productName);
+        productBtn.appendChild(productCount);
+        productLi.setAttribute("class", "productLi");
+        productLi.setAttribute("id", `${this.dataset.name}`);
+        productBtn.setAttribute("class", "productBtn");
+        productBtn.setAttribute("type", "button");
+        productImg.setAttribute("class", "productImg");
+        productImg.setAttribute("src", `./img/${this.dataset.name}.svg`);
+        productName.setAttribute("class", "productName");
+        productName.textContent = `${this.dataset.name}`;
+        productCount.setAttribute("class", "productCount");
+        productCount.textContent = 1;
+        basketList.appendChild(productLi);
+    } else {
+        const productCount = basketList.querySelector(`#${this.dataset.name} .productCount`);
+        productCount.textContent = parseInt(productCount.textContent) + parseInt(1);
+    }
 };
 
 Array.prototype.forEach.call(productList, (item) => {
+    // for (const product of productData) {
+    //     console.log(item);
+    //     console.log(product.name);
+    //     console.log(product.count);
+    // }
     item.addEventListener("click", addBasket);
 });
 
@@ -56,8 +116,6 @@ const comma = function (money) {
         .reverse()
         .join("");
 };
-
-let leftMoney = 0;
 
 const putMoney = function () {
     const myMoney = toInteger(wallet.textContent);
