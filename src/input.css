@@ -14,7 +14,7 @@
     }
 
     .productLi {
-        @apply w-[170px] h-[46px] rounded-[5px] bg-[#fff] flex-shrink-0
+        @apply w-[98%] h-[46px] rounded-[5px] bg-[#fff] flex-shrink-0
     }
 
     .productBtn {

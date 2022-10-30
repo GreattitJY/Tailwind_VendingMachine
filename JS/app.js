@@ -5,12 +5,14 @@ const inpMoney = purchase.querySelector("#input-money input");
 const inpBtn = purchase.querySelector("#input-button");
 const balance = purchase.querySelector("#balance");
 const balBtn = purchase.querySelector("#balBtn");
+const getBtn = purchase.querySelector("#get-button");
 const wallet = document.querySelector("#wallet");
 const basket = document.querySelector("#section-basket");
 const basketList = basket.querySelector("#section-basket ul");
-
+const getSection = document.querySelector("#section-get");
+const getBox = getSection.querySelector("#get-box");
+const totalMoney = getSection.querySelector("#totalMoney");
 let leftMoney = 0;
-// const click = 1;
 
 // product click event
 
@@ -58,7 +60,6 @@ const renderProductData = (function () {
 })();
 
 const addBasket = function () {
-    // console.log(this);
     const renderProductData = checkStock(this);
     if (leftMoney < renderProductData["price"]) {
         alert("잔액이 모자랍니다.");
@@ -66,7 +67,7 @@ const addBasket = function () {
     }
     leftMoney -= renderProductData["price"];
     balance.textContent = comma(leftMoney) + " 원";
-    if (basket.querySelector(`#${this.dataset.name}`) === null) {
+    if (basket.querySelector(`#${renderProductData["name"]}`) === null) {
         const productLi = document.createElement("li");
         const productBtn = document.createElement("button");
         const productImg = document.createElement("img");
@@ -77,19 +78,19 @@ const addBasket = function () {
         productBtn.appendChild(productName);
         productBtn.appendChild(productCount);
         productLi.setAttribute("class", "productLi");
-        productLi.setAttribute("id", `${this.dataset.name}`);
+        productLi.setAttribute("id", `${renderProductData["name"]}`);
         productBtn.setAttribute("class", "productBtn");
         productBtn.setAttribute("type", "button");
         productImg.setAttribute("class", "productImg");
-        productImg.setAttribute("src", `./img/${this.dataset.name}.svg`);
+        productImg.setAttribute("src", `./img/${renderProductData["name"]}.svg`);
         productName.setAttribute("class", "productName");
-        productName.textContent = `${this.dataset.name}`;
+        productName.textContent = `${renderProductData["name"]}`;
         productCount.setAttribute("class", "productCount");
         productCount.textContent = 1;
         basketList.appendChild(productLi);
         renderProductData["stock"] -= 1;
     } else {
-        const productCount = basketList.querySelector(`#${this.dataset.name} .productCount`);
+        const productCount = basketList.querySelector(`#${renderProductData["name"]} .productCount`);
         productCount.textContent = parseInt(productCount.textContent) + parseInt(1);
         renderProductData["stock"] -= 1;
     }
@@ -160,3 +161,23 @@ const returnMoney = function () {
 };
 
 balBtn.addEventListener("click", returnMoney);
+
+const getProduct = function () {
+    let countMoney = toInteger(totalMoney.textContent);
+    const basketProduct = basketList.querySelectorAll("li");
+    let count = 0;
+    // console.log(basketProduct[0]);
+    for (let i = 0; i < basketProduct.length; i++) {
+        // if (getBox.querySelector("#"))
+        const tmp = basketProduct[i].cloneNode(true);
+        getBox.appendChild(tmp);
+        const tmpCount = basketProduct[i].querySelector("span").textContent;
+        count += parseInt(tmpCount);
+    }
+    basketList.innerHTML = "";
+    countMoney += parseInt(count * 1000);
+    countMoney = comma(countMoney);
+    totalMoney.textContent = `총 금액 : ${countMoney}원`;
+};
+
+getBtn.addEventListener("click", getProduct);
