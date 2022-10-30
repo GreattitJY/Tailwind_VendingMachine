@@ -914,18 +914,6 @@ video {
   font-weight: 700;
 }
 
-.tracking-widest{
-  letter-spacing: 0.1em;
-}
-
-.tracking-wide{
-  letter-spacing: 0.025em;
-}
-
-.tracking-normal{
-  letter-spacing: 0em;
-}
-
 .text-\[\#333333\]{
   --tw-text-opacity: 1;
   color: rgb(51 51 51 / var(--tw-text-opacity));

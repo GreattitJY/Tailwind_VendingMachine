@@ -166,13 +166,18 @@ const getProduct = function () {
     let countMoney = toInteger(totalMoney.textContent);
     const basketProduct = basketList.querySelectorAll("li");
     let count = 0;
-    // console.log(basketProduct[0]);
     for (let i = 0; i < basketProduct.length; i++) {
-        // if (getBox.querySelector("#"))
-        const tmp = basketProduct[i].cloneNode(true);
-        getBox.appendChild(tmp);
-        const tmpCount = basketProduct[i].querySelector("span").textContent;
-        count += parseInt(tmpCount);
+        const basketProductId = basketProduct[i].getAttribute("id");
+        const basketProductCount = basketProduct[i].querySelector("span").textContent;
+        const checkGetbox = getBox.querySelector(`#${basketProductId}`);
+        if (checkGetbox) {
+            let getBoxProductCount = getBox.querySelector(`#${basketProductId} span`);
+            getBoxProductCount.textContent = parseInt(getBoxProductCount.textContent) + parseInt(basketProductCount);
+        } else {
+            const copyBasketProduct = basketProduct[i].cloneNode(true);
+            getBox.appendChild(copyBasketProduct);
+        }
+        count += parseInt(basketProductCount);
     }
     basketList.innerHTML = "";
     countMoney += parseInt(count * 1000);
