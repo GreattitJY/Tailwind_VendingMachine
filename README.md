@@ -11,6 +11,30 @@
 
 ## 업데이트 및 고민사항
 
+-   10월 31일 (업데이트 사항)
+
+    -   자바스크립트 요구사항을 모두 구현했습니다.
+
+-   10월 31일 (issue)
+
+    -   issue 1 입금액 입력에 콤마 찍기
+    -   issue 1-1 input의 type을 text로 받을 시 형변환 과정에서 입력값이 없을 경우 join 메서드에서 null 오류 발생
+    -   해결 방법 : try, catch를 통해 오류를 해결하여 숫자만 입력 가능하도록 만들었습니다.
+
+    ```js
+    const inpMoney = purchase.querySelector("#input-money input");
+
+    const inpValue = function () {
+        try {
+            inpMoney.value = comma(toInteger(inpMoney.value));
+        } catch {
+            inpMoney.value = "";
+        }
+    };
+
+    inpMoney.addEventListener("input", inpValue);
+    ```
+
 -   10월 29일 (issue, html 의존성 낮추기)
 
     -   issue 1 json 형식을 통해 데이터를 받아올 경우 재고 처리를 어떻게 할 것이지에 대한 문제

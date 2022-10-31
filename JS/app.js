@@ -14,8 +14,6 @@ const getBox = getSection.querySelector("#get-box");
 const totalMoney = getSection.querySelector("#totalMoney");
 let leftMoney = 0;
 
-// product click event
-
 const productData = [
     {
         name: "Original_Cola",
@@ -131,27 +129,22 @@ const comma = function (money) {
 };
 
 const putMoney = function () {
-    const myMoney = toInteger(wallet.textContent);
-    if (inpMoney.value.length === 0) {
-        alert("금액을 넣어주세요.");
-        return;
-    }
-    if (inpMoney.value > myMoney || inpMoney.value < 0) {
-        if (inpMoney.value > myMoney) {
+    try {
+        const myMoney = toInteger(wallet.textContent);
+        const insertMoney = toInteger(inpMoney.value);
+        if (insertMoney > myMoney) {
             alert("소지금이 부족합니다.");
-        } else {
-            alert("알맞은 금액을 넣어주세요.");
+            return (inpMoney.value = "");
         }
-        return (inpMoney.value = "");
+        const curMoney = comma(myMoney - insertMoney);
+        wallet.textContent = curMoney + " 원";
+        leftMoney += parseInt(insertMoney);
+        balance.textContent = comma(leftMoney) + " 원";
+        inpMoney.value = "";
+    } catch {
+        alert("금액을 넣어주세요.");
     }
-    const curMoney = comma(myMoney - inpMoney.value);
-    wallet.textContent = curMoney + " 원";
-    leftMoney += parseInt(inpMoney.value);
-    balance.textContent = comma(leftMoney) + " 원";
-    inpMoney.value = "";
 };
-
-inpBtn.addEventListener("click", putMoney);
 
 const returnMoney = function () {
     const curMoney = toInteger(wallet.textContent) + leftMoney;
@@ -159,8 +152,6 @@ const returnMoney = function () {
     balance.textContent = 0 + " 원";
     wallet.textContent = comma(curMoney) + " 원";
 };
-
-balBtn.addEventListener("click", returnMoney);
 
 const getProduct = function () {
     let countMoney = toInteger(totalMoney.textContent);
@@ -185,4 +176,15 @@ const getProduct = function () {
     totalMoney.textContent = `총 금액 : ${countMoney}원`;
 };
 
+const inpValue = function () {
+    try {
+        inpMoney.value = comma(toInteger(inpMoney.value));
+    } catch {
+        inpMoney.value = "";
+    }
+};
+
+inpMoney.addEventListener("input", inpValue);
+inpBtn.addEventListener("click", putMoney);
+balBtn.addEventListener("click", returnMoney);
 getBtn.addEventListener("click", getProduct);
