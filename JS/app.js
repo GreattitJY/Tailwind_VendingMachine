@@ -14,58 +14,31 @@ const getBox = getSection.querySelector("#get-box");
 const totalMoney = getSection.querySelector("#totalMoney");
 let leftMoney = 0;
 
-const productData = [
-    {
-        name: "Original_Cola",
-        price: 1000,
-        stock: 5,
-    },
-    {
-        name: "Violet_Cola",
-        price: 1000,
-        stock: 0,
-    },
-    {
-        name: "Yellow_Cola",
-        price: 1000,
-        stock: 10,
-    },
-    {
-        name: "Cool_Cola",
-        price: 1000,
-        stock: 2,
-    },
-    {
-        name: "Green_Cola",
-        price: 1000,
-        stock: 10,
-    },
-    {
-        name: "Orange_Cola",
-        price: 1000,
-        stock: 10,
-    },
-];
+const renderProductData = [];
 
-const renderProductData = (function () {
-    const temp = [];
-    for (const data of productData) {
-        temp.push({
-            ...data,
-        });
+const renderProduct = async function () {
+    try {
+        const response = await fetch("./JS/item.json");
+        const result = await response.json();
+        for (const data of result) {
+            renderProductData.push({
+                ...data,
+            });
+        }
+    } catch (e) {
+        console.error(e);
     }
-    return temp;
-})();
+};
 
 const addBasket = function () {
-    const renderProductData = checkStock(this);
-    if (leftMoney < renderProductData["price"]) {
+    const renderData = checkStock(this);
+    if (leftMoney < renderData["price"]) {
         alert("잔액이 모자랍니다.");
         return;
     }
-    leftMoney -= renderProductData["price"];
+    leftMoney -= renderData["price"];
     balance.textContent = comma(leftMoney) + " 원";
-    if (basket.querySelector(`#${renderProductData["name"]}`) === null) {
+    if (basket.querySelector(`#${renderData["name"]}`) === null) {
         const productLi = document.createElement("li");
         const productBtn = document.createElement("button");
         const productImg = document.createElement("img");
@@ -76,33 +49,33 @@ const addBasket = function () {
         productBtn.appendChild(productName);
         productBtn.appendChild(productCount);
         productLi.setAttribute("class", "productLi");
-        productLi.setAttribute("id", `${renderProductData["name"]}`);
+        productLi.setAttribute("id", `${renderData["name"]}`);
         productBtn.setAttribute("class", "productBtn");
         productBtn.setAttribute("type", "button");
         productImg.setAttribute("class", "productImg");
-        productImg.setAttribute("src", `./img/${renderProductData["name"]}.svg`);
+        productImg.setAttribute("src", `./img/${renderData["name"]}.svg`);
         productName.setAttribute("class", "productName");
-        productName.textContent = `${renderProductData["name"]}`;
+        productName.textContent = `${renderData["name"]}`;
         productCount.setAttribute("class", "productCount");
         productCount.textContent = 1;
         basketList.appendChild(productLi);
-        renderProductData["stock"] -= 1;
+        renderData["stock"] -= 1;
     } else {
-        const productCount = basketList.querySelector(`#${renderProductData["name"]} .productCount`);
+        const productCount = basketList.querySelector(`#${renderData["name"]} .productCount`);
         productCount.textContent = parseInt(productCount.textContent) + parseInt(1);
-        renderProductData["stock"] -= 1;
+        renderData["stock"] -= 1;
     }
     checkStock(this);
 };
 
-const checkStock = function (product) {
-    for (const data of renderProductData) {
-        if (product.dataset.name === data["name"]) {
-            if (data["stock"] === 0) {
-                product.classList.add("before:disabled");
-                product.disabled = true;
+const checkStock = function (productData) {
+    for (const renderData of renderProductData) {
+        if (productData.dataset.name === renderData["name"]) {
+            if (renderData["stock"] === 0) {
+                productData.classList.add("before:disabled");
+                productData.disabled = true;
             } else {
-                return data;
+                return renderData;
             }
         }
     }
@@ -184,6 +157,7 @@ const inpValue = function () {
     }
 };
 
+renderProduct();
 inpMoney.addEventListener("input", inpValue);
 inpBtn.addEventListener("click", putMoney);
 balBtn.addEventListener("click", returnMoney);
