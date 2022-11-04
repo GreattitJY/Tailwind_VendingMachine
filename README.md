@@ -14,8 +14,8 @@
 -   11월 4일 (issue)
 
     -   issue 1 fetch는 비동기 처리 방식으로 코드 실행 순서에서 의도치 않은 문제가 발생 (11월 3일 작업 코드)
-    -   issue 1-1 json 데이터에서 음료 재고가 0일 경우 바로 품절표시 되지 않음 (노드리스트가 빈 배열)
-    -   해결 방법 : Promise .then으로 문제 해결
+    -   issue 1-1 json 데이터에서 음료 재고가 0일 경우 바로 품절표시 되지 않음 (렌더 데이터가 빈 배열)
+    -   해결 방법 : Promise .then으로 문제 해결했습니다.
 
     ```js
     const renderProductData = [];
