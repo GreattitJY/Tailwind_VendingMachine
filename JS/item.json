@@ -9,7 +9,7 @@
         "name": "Violet_Cola",
         "price": 1000,
         "img": "Violet_Cola.svg",
-        "stock": 5
+        "stock": 0
     },
     {
         "name": "Yellow_Cola",
