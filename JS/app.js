@@ -12,23 +12,50 @@ const basketList = basket.querySelector("#section-basket ul");
 const getSection = document.querySelector("#section-get");
 const getBox = getSection.querySelector("#get-box");
 const totalMoney = getSection.querySelector("#totalMoney");
-let leftMoney = 0;
+
+// purchase
+const toInteger = function (string) {
+    return parseInt(string.match(/[0-9]/g).join(""));
+};
+
+const comma = function (money) {
+    return money
+        .toString()
+        .split("")
+        .reverse()
+        .map((val, idx) => (idx % 3 === 0 && idx !== 0 ? val + "," : val))
+        .reverse()
+        .join("");
+};
+
+let leftMoney = toInteger(balance.textContent);
 
 const renderProductData = [];
 
-const renderProduct = async function () {
-    try {
-        const response = await fetch("./JS/item.json");
-        const result = await response.json();
+const promise = new Promise((resolve, reject) => {
+    const response = fetch("./JS/item.json");
+    resolve(response);
+})
+    .then((response) => {
+        const result = response.json();
+        return result;
+    })
+    .then((result) => {
         for (const data of result) {
             renderProductData.push({
                 ...data,
             });
         }
-    } catch (e) {
+    })
+    .then((result) => {
+        Array.prototype.forEach.call(productList, (product) => {
+            checkStock(product);
+            product.addEventListener("click", addBasket);
+        });
+    })
+    .catch((e) => {
         console.error(e);
-    }
-};
+    });
 
 const addBasket = function () {
     const renderData = checkStock(this);
@@ -79,26 +106,6 @@ const checkStock = function (productData) {
             }
         }
     }
-};
-
-Array.prototype.forEach.call(productList, (product) => {
-    checkStock(product);
-    product.addEventListener("click", addBasket);
-});
-
-// purchase
-const toInteger = function (string) {
-    return parseInt(string.match(/[0-9]/g).join(""));
-};
-
-const comma = function (money) {
-    return money
-        .toString()
-        .split("")
-        .reverse()
-        .map((val, idx) => (idx % 3 === 0 && idx !== 0 ? val + "," : val))
-        .reverse()
-        .join("");
 };
 
 const putMoney = function () {
@@ -157,7 +164,6 @@ const inpValue = function () {
     }
 };
 
-renderProduct();
 inpMoney.addEventListener("input", inpValue);
 inpBtn.addEventListener("click", putMoney);
 balBtn.addEventListener("click", returnMoney);

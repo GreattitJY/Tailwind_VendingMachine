@@ -11,14 +11,60 @@
 
 ## 업데이트 및 고민사항
 
+-   11월 4일 (issue)
+
+    -   issue 1 fetch는 비동기 처리 방식으로 코드 실행 순서에서 의도치 않은 문제가 발생 (11월 3일 작업 코드)
+    -   issue 1-1 json 데이터에서 음료 재고가 0일 경우 바로 품절표시 되지 않음 (노드리스트가 빈 배열)
+    -   해결 방법 : Promise .then으로 문제 해결
+
+    ```js
+    const renderProductData = [];
+
+    const promise = new Promise((resolve, reject) => {
+        const response = fetch("./JS/item.json");
+        resolve(response);
+    })
+        .then((response) => {
+            const result = response.json();
+            return result;
+        })
+        .then((result) => {
+            for (const data of result) {
+                renderProductData.push({
+                    ...data,
+                });
+            }
+        })
+        .then((result) => {
+            Array.prototype.forEach.call(productList, (product) => {
+                checkStock(product);
+                product.addEventListener("click", addBasket);
+            });
+        })
+        .catch((e) => {
+            console.error(e);
+        });
+    ```
+
 -   11월 3일 (업데이트 사항)
 
     -   item.json 파일 생성
     -   json 파일 렌더링 함수 구현 완료했습니다.
 
--   10월 31일 (업데이트 사항)
-
-    -   ~~자바스크립트 요구사항을 모두 구현했습니다.~~
+    ```js
+    const renderProductData = [];
+    const renderProduct = async function () {
+    try {
+        const response = await fetch("./JS/item.json");
+        const result = await response.json();
+        for (const data of result) {
+            renderProductData.push({
+                ...data,
+            });
+        }
+    } catch (e) {
+        console.error(e);
+    ```
 
 -   10월 31일 (issue)
 
