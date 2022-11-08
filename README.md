@@ -86,11 +86,10 @@
     inpMoney.addEventListener("input", inpValue);
     ```
 
--   10월 29일 (issue, html 의존성 낮추기)
+-   10월 29일 (issue)
 
     -   issue 1 json 형식을 통해 데이터를 받아올 경우 재고 처리를 어떻게 할 것이지에 대한 문제 (실제로 api를 받아오진 않고 가정만 했습니다.)
     -   해결 방법 : render를 통한 객체를 생성 후 변수를 할당하기로 해결했습니다.
-    -   html 의존성 낮추기 : json 데이터 형식을 활용할 경우 dataset.price를 자바스크립트에서 처리 (dataset.price는 제거, dataset.name은 아직 남아 있습니다.)
 
         ```js
         const renderProductData = (function () {
