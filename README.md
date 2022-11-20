@@ -11,6 +11,32 @@
 
 ## 업데이트 및 고민사항
 
+-   11월 20일
+
+    -   11월 4일 비동기 코드 수정 : Promise 함수를 async, await로 리팩토링
+    -   이유 : fetch는 promise를 반환하는데 Promise 함수로 묶는 것이 적절치 않아서 수정했습니다.
+
+    ```js
+    const renderProduct = async function () {
+        try {
+            const response = await fetch("./JS/item.json");
+            const result = await response.json();
+
+            for (const data of result) {
+                renderProductData.push({
+                    ...data,
+                });
+            }
+            Array.prototype.forEach.call($productList, (product) => {
+                checkStock(product);
+                product.addEventListener("click", addBasket);
+            });
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    ```
+
 -   11월 4일 (issue)
 
     -   issue 1 fetch는 비동기 처리 방식으로 코드 실행 순서에서 의도치 않은 문제가 발생 (11월 3일 작업 코드)
