@@ -25,30 +25,24 @@ const renderProductData = [];
  *   2. 재고를 파악합니다.
  *   3. 제품에 클릭 이벤트를 추가합니다.
  */
-const promise = new Promise((resolve, reject) => {
-    const response = fetch("./JS/item.json");
-    resolve(response);
-})
-    .then((response) => {
-        const result = response.json();
-        return result;
-    })
-    .then((result) => {
+const renderProduct = async function () {
+    try {
+        const response = await fetch("./JS/item.json");
+        const result = await response.json();
+
         for (const data of result) {
             renderProductData.push({
                 ...data,
             });
         }
-    })
-    .then((result) => {
         Array.prototype.forEach.call($productList, (product) => {
             checkStock(product);
             product.addEventListener("click", addBasket);
         });
-    })
-    .catch((e) => {
-        console.error(e);
-    });
+    } catch (error) {
+        console.error(error);
+    }
+};
 
 // 양의 정수 및 콤마 기능
 const toInteger = function (string) {
@@ -195,6 +189,7 @@ const inpValue = function () {
     }
 };
 
+renderProduct();
 $inpMoney.addEventListener("input", inpValue);
 $inpBtn.addEventListener("click", putMoney);
 $balBtn.addEventListener("click", returnMoney);
