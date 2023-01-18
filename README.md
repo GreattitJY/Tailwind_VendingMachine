@@ -1,4 +1,6 @@
 # VendingMachine
+<img width="750" alt="image" src="https://user-images.githubusercontent.com/103429329/213040755-370880da-c33b-45d7-bf0e-0a383a2d7f35.png">
+
 
 -   음료를 판매하는 자판기를 구현하는 프로젝트입니다.
     -   미디어 쿼리를 이용한 반응형 웹 페이지입니다.
